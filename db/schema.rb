@@ -40,6 +40,11 @@ ActiveRecord::Schema.define(version: 2021_12_29_083634) do
   end
 
   create_table "reservations", force: :cascade do |t|
+    t.string "payment"
+    t.integer "chiket_sheets"
+    t.integer "total_sheets"
+    t.datetime "confirm_time"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

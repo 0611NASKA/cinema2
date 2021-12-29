@@ -13,6 +13,12 @@
 ActiveRecord::Schema.define(version: 2021_12_29_083634) do
 
   create_table "admins", force: :cascade do |t|
+    t.string "login_id", null: false
+    t.string "password", null: false
+    t.string "name", null: false
+    t.date "birthday", null: false
+    t.string "tel", null: false
+    t.string "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,6 +36,13 @@ ActiveRecord::Schema.define(version: 2021_12_29_083634) do
   end
 
   create_table "movies", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "explanation", null: false
+    t.date "released_at", null: false
+    t.date "expired_at", null: false
+    t.integer "screening_time", null: false
+    t.string "distribution", null: false
+    t.string "director", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,6 +63,9 @@ ActiveRecord::Schema.define(version: 2021_12_29_083634) do
   end
 
   create_table "schedules", force: :cascade do |t|
+    t.date "screening_date", null: false
+    t.time "starttime", null: false
+    t.time "endtime", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,6 +86,8 @@ ActiveRecord::Schema.define(version: 2021_12_29_083634) do
   end
 
   create_table "tickets", force: :cascade do |t|
+    t.string "type", null: false
+    t.integer "total", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

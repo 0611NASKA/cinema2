@@ -48,11 +48,19 @@ ActiveRecord::Schema.define(version: 2021_12_29_083634) do
   end
 
   create_table "reservation_details", force: :cascade do |t|
+    t.integer "reservation_id", null: false
+    t.integer "ticket_id", null: false
+    t.integer "seat_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["reservation_id"], name: "index_reservation_details_on_reservation_id"
+    t.index ["seat_id"], name: "index_reservation_details_on_seat_id"
+    t.index ["ticket_id"], name: "index_reservation_details_on_ticket_id"
   end
 
   create_table "reservations", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "schedule_id"
     t.string "payment"
     t.integer "chiket_sheets"
     t.integer "total_sheets"
@@ -60,21 +68,31 @@ ActiveRecord::Schema.define(version: 2021_12_29_083634) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_reservations_on_member_id"
+    t.index ["schedule_id"], name: "index_reservations_on_schedule_id"
   end
 
   create_table "schedules", force: :cascade do |t|
+    t.integer "theater_id", null: false
+    t.integer "movie_id", null: false
+    t.integer "screen_id", null: false
     t.date "screening_date", null: false
     t.time "starttime", null: false
     t.time "endtime", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_schedules_on_movie_id"
+    t.index ["screen_id"], name: "index_schedules_on_screen_id"
+    t.index ["theater_id"], name: "index_schedules_on_theater_id"
   end
 
   create_table "screens", force: :cascade do |t|
     t.integer "screen_no", null: false
+    t.integer "theater_id", null: false
     t.integer "seat_group", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["theater_id"], name: "index_screens_on_theater_id"
   end
 
   create_table "seats", force: :cascade do |t|

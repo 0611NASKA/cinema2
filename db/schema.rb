@@ -71,16 +71,26 @@ ActiveRecord::Schema.define(version: 2021_12_29_083634) do
   end
 
   create_table "screens", force: :cascade do |t|
+    t.integer "screen_no", null: false
+    t.integer "seat_group", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "seats", force: :cascade do |t|
+    t.integer "seat_group", null: false
+    t.string "line", null: false
+    t.integer "start_line", null: false
+    t.integer "last_line", null: false
+    t.integer "num", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "theaters", force: :cascade do |t|
+    t.string "store_name", null: false
+    t.string "address", null: false
+    t.string "tel", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

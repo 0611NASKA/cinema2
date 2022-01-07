@@ -7,4 +7,5 @@ int = 20
     address: "#{name[idx]} 1-1-1",
     tel: "0120-00-0"+idx.to_s+int.to_s
   )
+  int = int +1
 end

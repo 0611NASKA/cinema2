@@ -1,0 +1,24 @@
+<% @page_title = "映画一覧" %>
+
+<% if @movies.present? %>
+  <table class = "list">
+    <thead>
+      <tr>
+        <th>作品番号</th>
+        <th>作品名</th>
+        <th>上映時間</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movies.each do |movie| %>
+        <tr>
+          <td style = "text-align: right"><%= movie.id %></td>
+          <td><%= movie.title %></td>
+          <td><%= movie.screening_time %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>作品情報がありません。</p>
+<% end %>

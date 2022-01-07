@@ -3,6 +3,11 @@ class MoviesController < ApplicationController
     @movies = Movie.order("id")
   end
 
+  def search
+    @movies = Movie.search(params[:q])
+    render "index"
+  end
+
   def show
   end
 

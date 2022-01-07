@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root "top#index"
-  resources :movies
+  resources :movies do
+    get "search", on: :collection
+  end
 end

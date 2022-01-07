@@ -1,5 +1,10 @@
 <% @page_title = "映画一覧" %>
 
+<%= form_tag :search_movies, method: :get, class: "search" do %>
+  <%= text_field_tag "q", params[:q] %>
+  <%= submit_tag "検索" %>
+<% end %>
+
 <% if @movies.present? %>
   <table class = "list">
     <thead>
@@ -13,7 +18,7 @@
       <% @movies.each do |movie| %>
         <tr>
           <td style = "text-align: right"><%= movie.id %></td>
-          <td><%= movie.title %></td>
+          <td><%= link_to movie.title, movie %></td>
           <td><%= movie.screening_time %></td>
         </tr>
       <% end %>

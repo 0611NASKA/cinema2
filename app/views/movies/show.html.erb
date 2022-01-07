@@ -1,0 +1,32 @@
+<% @page_title = "作品の詳細" %>
+
+<table class = "attr">
+  <tr>
+    <th width = "80">作品名</th>
+    <td><%= @movie.title %></td>
+  </tr>
+  <tr>
+    <th>あらすじ</th>
+    <td><%= @movie.explanation %></td>
+  </tr>
+  <tr>
+    <th>公開開始日</th>
+    <td><%= @movie.released_at %></td>
+  </tr>
+  <tr>
+    <th>公開終了日</th>
+    <td><%= @movie.expired_at %></td>
+  </tr>
+  <tr>
+    <th>上映時間</th>
+    <td><%= @movie.screening_time %></td>
+  </tr>
+  <tr>
+    <th>配給</th>
+    <td><%= @movie.distribution %></td>
+  </tr>
+  <tr>
+    <th>監督</th>
+    <td><%= @movie.director %></td>
+  </tr>
+</table>

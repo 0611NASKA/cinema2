@@ -16,7 +16,7 @@ dir = ["田中", "佐藤", "堀北"]
     title: "#{ftitles[idx % 4]}#{gtitles[idx % 3]}",
     explanation: body,
     released_at: 31.days.ago.advance(days: idx),
-    expired_at: 31.days.ago.advance(days: idx),
+    expired_at: 31.days.ago.advance(days: 60),
     screening_time: int[idx % 3],
     distribution: dis[idx % 3],
     director: dir[idx % 3]

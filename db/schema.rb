@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2022_01_05_092555) do
 
   create_table "members", force: :cascade do |t|
     t.string "login_id", null: false
-    t.string "password", null: false
     t.string "name", null: false
     t.date "birthday", null: false
     t.string "tel", null: false

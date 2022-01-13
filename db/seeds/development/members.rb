@@ -7,6 +7,7 @@ int = 10
   Member.create(
     login_id: ids[idx],
     password: "#{ids[idx]}",
+    password_confirmation: "#{ids[idx]}",
     name: "#{fnames[idx % 4]} #{gnames[idx % 3]}",
     birthday: "#{rand(1980..2000)}-#{rand(1..12)}-#{rand(1..20)}",
     tel: "0120-00-0"+idx.to_s+int.to_s,

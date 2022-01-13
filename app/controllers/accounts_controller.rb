@@ -11,7 +11,7 @@ class AccountsController < ApplicationController
 
   def update
     @member = current_member
-    @member.assign_attribute(params[:account])
+    @member.assign_attributes(params[:account])
     if @member.save
       redirect_to :account, notice: "アカウント情報を更新しました。"
     else

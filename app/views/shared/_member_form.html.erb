@@ -1,3 +1,5 @@
+<%= render "shared/errors", obj: @member %>
+
 <table class="attr">
   <tr>
     <th><%= form.label :login_id, "ログインID" %></th>
@@ -25,8 +27,10 @@
     <th><%= form.label :payment, "決済情報" %></th>
     <td><%= form.text_field :payment %></td>
   </tr>
-  <tr>
-    <th><%= form.label :password, "パスワード" %></th>
-    <td><%= form.text_field :password %></td>
-  </tr>
+  <% if @member.new_record? %>
+    <tr>
+      <th><%= form.label :password, "パスワード" %></th>
+      <td><%= form.text_field :password %></td>
+    </tr>
+  <% end %>
 </table>

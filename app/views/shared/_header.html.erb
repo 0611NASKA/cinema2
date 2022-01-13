@@ -1,5 +1,3 @@
-<header>BookFirm</header>
-
 <% if current_member %>
   <ul class="account-menu">
     <%= current_member.login_id %>
@@ -7,6 +5,8 @@
           method: :delete, data: { confirm: "ログアウトしますか？" } %>
   </ul>
 <% end %>
+<header>BookFirm</header>
+
 <nav class="menubar">
   <ul>
     <%= menu_link_to "TOP", :root %>

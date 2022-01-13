@@ -14,197 +14,179 @@
  *= require_self
  */
 
- /* ページ全体 */
- body {
-   background-color: white;
-   color: black;
-   margin: 0; padding: 0;
-   font-family: Meiryo, sans-serif;
- }
+/* ページ全体 */
+body {
+  background-color: white;
+  color: black;
+  margin: 0; padding: 0;
+  font-family: Meiryo, sans-serif;
+}
 
- /* リンク */
- a:link { color: #00c; }
- a:visited { color: #00c; }
- a:hover { color: #f00; }
- a img { border: none; }
+/* リンク */
+a:link { color: #00c; }
+a:visited { color: #00c; }
+a:hover { color: #f00; }
+a img { border: none; }
 
- /* ブロック要素 */
- p, h1, h2, h3, table, ul {
-   margin: 0 0 1em;
- }
+/* ブロック要素 */
+p, h1, h2, h3, table, ul {
+  margin: 0 0 1em;
+}
 
- /* ナビゲーション */
- nav ul,
- ul.toolbar,
- ul.links {
-   list-style-type: none;
-   margin: 0;
-   padding: 0;
- }
+/* ナビゲーション */
+nav ul,
+ul.toolbar,
+ul.links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
- nav ul li,
- div.toolbar li,
- ul.toolbar li,
- ul.links li {
-   display: inline;
- }
+nav ul li,
+div.toolbar li,
+ul.toolbar li,
+ul.links li {
+  display: inline;
+}
 
- /* 全体の枠 */
- div#container {
-   margin: 0 auto;
-   padding-top: 5px;
-   width: 780px;
- }
+/* 全体の枠 */
+div#container {
+  margin: 0 auto;
+  padding-top: 5px;
+  width: 780px;
+}
 
- /* 左の枠（コンテンツを入れる） */
- main {
-   float: left;
-   width: 530px;
-   padding: 10px 10px 10px 0;
- }
+/* 左の枠（コンテンツを入れる） */
+main {
+  float: left;
+  width: 530px;
+  padding: 10px 10px 10px 0;
+}
 
- /* 右の枠（サイドバーを入れる） */
- aside#sidebar {
-   float: left;
-   width: 230px;
-   background-color: #e8ffff;
-   padding: 5px;
-   font-size: 70%;
- }
+/* 右の枠（サイドバーを入れる） */
+aside#sidebar {
+  float: left;
+  width: 230px;
+  background-color: #e8ffff;
+  padding: 5px;
+  font-size: 50%;
+}
 
- /* ヘッダー */
- header {
-   border-top: 8px solid #6bb;
-   padding-top: 8px;
-   font-size: 120%;
- }
+/* ヘッダー */
+header {
+  border-top: 8px solid #6bb;
+  padding-top: 8px;
+}
 
- ul.account-menu {
-   font-size: 50%;
-   text-align: right;
- }
+ul.account-menu {
+  text-align: right;
+}
 
- /* フッター */
- footer {
-   clear: both;
-   font: 11px Verdana;
-   color: #888;
-   padding: 8px 0;
-   border-top: 4px solid #6bb;
-   text-align: center;
- }
+/* メニューバー */
+nav.menubar {
+  padding: 2px;
+  background-color: #000;
+  color: #ccc;
+  font-size: 80%;
+  padding: 8px 16px;
+}
 
- footer nav ul li:not(:last-child):after {
-   color: #888;
-   content: " | ";
-   margin: 0 5px;
- }
+nav.menubar ul li:not(:last-child):after {
+  color: #ccc;
+  content: " | ";
+  margin: 0 2px;
+}
 
- /* メニューバー */
- nav.menubar {
-   padding: 2px;
-   background-color: #000;
-   color: #ccc;
-   font-size: 80%;
-   padding: 8px 16px;
- }
+/* メニューバーのリンク */
+nav.menubar a { text-decoration: none; }
 
- nav.menubar ul li:not(:last-child):after {
-   color: #ccc;
-   content: " | ";
-   margin: 0 2px;
- }
+/* メニューバーのリンク（未訪問） */
+nav.menubar a:link { color: #ccc; }
 
- /* メニューバーのリンク */
- nav.menubar a { text-decoration: none; }
+/* メニューバーのリンク（訪問済） */
+nav.menubar a:visited { color: #ccc; }
 
- /* メニューバーのリンク（未訪問） */
- nav.menubar a:link { color: #ccc; }
+/* メニューバーのリンク（マウスを合わせたとき） */
+nav.menubar a:hover {
+  color: #f88;
+  text-decoration: underline;
+}
 
- /* メニューバーのリンク（訪問済） */
- nav.menubar a:visited { color: #ccc; }
+/* メニューバーのリンク（現在のページ） */
+nav.menubar span {
+  color: #ff8;
+  font-weight: bold;
+}
 
- /* メニューバーのリンク（マウスを合わせたとき） */
- nav.menubar a:hover {
-   color: #f88;
-   text-decoration: underline;
- }
+/* メインコンテンツ */
+main h1 {
+  color: #88c;
+  font-weight: normal;
+  font-size: 150%;
+  border-bottom: 2px solid #88c;
+  margin-bottom: 0.5em;
+}
 
- /* メニューバーのリンク（現在のページ） */
- nav.menubar span {
-   color: #ff8;
-   font-weight: bold;
- }
+main h2 {
+  color: #99d;
+  font-weight: bold;
+  font-size: 120%;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #ccf;
+}
 
- /* メインコンテンツ */
- main h1 {
-   color: #88c;
-   font-weight: normal;
-   font-size: 150%;
-   border-bottom: 2px solid #88c;
-   margin-bottom: 0.5em;
- }
+main p {
+  font-size: 90%;
+  line-height: 1.5;
+}
 
- main h2 {
-   color: #99d;
-   font-weight: bold;
-   font-size: 120%;
-   margin-bottom: 0.5em;
-   border-bottom: 1px solid #ccf;
- }
+ul.toolbar,
+div.toolbar {
+  padding: 15px 0;
+  font-size: 90%;
+  text-align: right;
+}
 
- main p {
-   font-size: 90%;
-   line-height: 1.5;
- }
+ul.toolbar li:not(:last-child):after {
+  color: #888;
+  content: " | ";
+  margin: 0 2px;
+}
 
- ul.toolbar,
- div.toolbar {
-   padding: 15px 0;
-   font-size: 90%;
-   text-align: right;
- }
+/* サイドバー */
+form#login-form {
+  font-size: 10px;
+}
 
- ul.toolbar li:not(:last-child):after {
-   color: #888;
-   content: " | ";
-   margin: 0 2px;
- }
+form#login-form div {
+  padding: 2px;
+  text-align: center;
+}
 
- /* サイドバー */
- form#login-form {
-   font-size: 12px;
- }
+form#login-form label {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+}
 
- form#login-form div {
-   padding: 2px;
-   text-align: center;
- }
+form#login-form input[type="text"],
+form#login-form input[type="password"] {
+  width: 120px;
+}
 
- form#login-form label {
-   display: inline-block;
-   width: 80px;
-   text-align: center;
- }
+aside#sidebar h2 {
+  color: #080;
+  font-weight: bold;
+  border-bottom: 1px dotted #080;
+  margin-bottom: 0.5em;
+  font-size: 100%;
+}
 
- form#login-form input[type="text"],
- form#login-form input[type="password"] {
-   width: 120px;
- }
+aside#sidebar ul {
+  padding-left: 1em;
+  list-style-type: none;
+}
 
- aside#sidebar h2 {
-   color: #080;
-   font-weight: bold;
-   border-bottom: 1px dotted #080;
-   margin-bottom: 0.5em;
-   font-size: 100%;
- }
-
- aside#sidebar ul {
-   padding-left: 1em;
-   list-style-type: none;
- }
-
- aside#sidebar li {
-   margin-bottom: 0.3em;
- }
+aside#sidebar li {
+  margin-bottom: 0.3em;
+}

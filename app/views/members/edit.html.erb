@@ -1,0 +1,6 @@
+<div class="toolbar"><%= link_to "戻る", @member %></div>
+
+<%= form_for @member do |form| %>
+  <%= render "shared/member_form", form: form %>
+  <div><%= form.submit %></div>
+<% end %>

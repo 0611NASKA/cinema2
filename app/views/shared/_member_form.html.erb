@@ -1,0 +1,32 @@
+<table class="attr">
+  <tr>
+    <th><%= form.label :login_id, "ログインID" %></th>
+    <td><%= form.text_field :login_id %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :name, "氏名" %></th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :borthday, "誕生日", for: "member_birthday_1i" %></th>
+    <td><%= form.date_select :birthday,
+              start_year: 1940, end_year: Time.current.year,
+              use_month_numbers: true %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :tel, "電話番号" %></th>
+    <td><%= form.text_field :tel %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :email, "メールアドレス" %></th>
+    <td><%= form.text_field :email %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :payment, "決済情報" %></th>
+    <td><%= form.text_field :payment %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :password, "パスワード" %></th>
+    <td><%= form.text_field :password %></td>
+  </tr>
+</table>

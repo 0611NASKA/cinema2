@@ -1,0 +1,20 @@
+<% @page_title = "劇場一覧" %>
+
+<% if @theaters.present? %>
+  <table class = "list">
+    <thead>
+      <tr>
+        <th>店舗名</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @theaters.each do |theater| %>
+        <tr>
+          <td><%= link_to theater.store_name, theater %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>作品情報がありません。</p>
+<% end %>

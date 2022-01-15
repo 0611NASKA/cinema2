@@ -1,1 +1,9 @@
 <% @page_title = "BookFirm" %>
+
+<% @movies.each do |movie| %>
+  <h2><%= movie.title %></h2>
+  <p>
+    <%= truncate movie.explanation, length: 80 %>
+    <%= link_to "映画の詳細へ", movie %>
+  </p>
+<% end %>

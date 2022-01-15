@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.order("id")
+    @movies = Movie.order("id").page(params[:page]).per(10)
   end
 
   def search

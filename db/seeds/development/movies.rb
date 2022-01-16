@@ -11,7 +11,7 @@ int = [120, 130, 110]
 dis = ["生田", "神田", "石巻"]
 dir = ["田中", "佐藤", "堀北"]
 
-0.upto(19) do |idx|
+0.upto(20) do |idx|
   Movie.create(
     title: "#{ftitles[idx % 6]}#{gtitles[idx % 5]}",
     explanation: body,

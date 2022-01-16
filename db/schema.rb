@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 2022_01_05_092555) do
     t.integer "movie_id", null: false
     t.integer "screen_no", null: false
     t.date "screening_date", null: false
-    t.time "starttime", null: false
-    t.time "endtime", null: false
+    t.time "start_time", null: false
+    t.time "end_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["movie_id"], name: "index_schedules_on_movie_id"

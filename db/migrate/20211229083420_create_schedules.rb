@@ -5,8 +5,8 @@ class CreateSchedules < ActiveRecord::Migration[5.2]
       t.references :movie, null: false
       t.integer :screen_no, null: false
       t.date :screening_date, null: false
-      t.time :starttime, null: false
-      t.time :endtime, null: false
+      t.time :start_time, null: false
+      t.time :end_time, null: false
 
       t.timestamps
     end

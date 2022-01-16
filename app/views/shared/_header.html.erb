@@ -5,6 +5,14 @@
           method: :delete, data: { confirm: "ログアウトしますか？" } %>
   </ul>
 <% end %>
+
+<% if current_admin %>
+  <ul class="account-menu">
+    <%= current_admin.login_id %>
+    <%= menu_link_to "ログアウト", :adminsession,
+          method: :delete, data: { confirm: "ログアウトしますか？" } %>
+  </ul>
+<% end %>
 <header>BookFirm</header>
 
 <nav class="menubar">

@@ -1,5 +1,5 @@
 lines = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
-0.upto(49) do |idx|
+0.upto(20) do |idx|
   Seat.create(
     seat_group: idx%5,
     line: "#{lines[idx%9]}",

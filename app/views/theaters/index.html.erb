@@ -5,12 +5,16 @@
     <thead>
       <tr>
         <th>店舗名</th>
+        <th>住所</th>
+        <th>電話番号</th>
       </tr>
     </thead>
     <tbody>
       <% @theaters.each do |theater| %>
         <tr>
           <td><%= link_to theater.store_name, theater %></td>
+          <td><%= theater.address %></td>
+          <td><%= theater.tel %></td>
         </tr>
       <% end %>
     </tbody>

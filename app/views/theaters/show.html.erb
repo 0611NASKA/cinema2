@@ -1,14 +1,23 @@
-<% @page_title = @theaters.store_name %>
+<% @page_title = "劇場作品" %>
 
-<h1><%= @page_title %></h1>
-
-<table class = "attr">
-  <tr>
-    <th>住所</th>
-    <td><%= @theaters.address %></td>
-  </tr>
-  <tr>
-    <th>電話番号</th>
-    <td><%= @theaters.tel %></td>
-  </tr>
-</table>
+<% if @theaters.present? %>
+  <table class = "list">
+    <thead>
+      <tr>
+        <th>作品名</th>
+        <th>上映時間</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movies.each do |m| %>
+        <tr>
+          <% movie = Movie.find(m.movie_id) %>
+          <td><%= link_to movie.title, "#" %></td>
+          <td><%= movie.screening_time %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>作品情報がありません。</p>
+<% end %>

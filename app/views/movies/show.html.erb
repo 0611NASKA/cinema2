@@ -29,4 +29,13 @@
     <th>監督</th>
     <td><%= @movie.director %></td>
   </tr>
+  <tr>
+    <th>上映劇場</th>
+    <td>
+      <% @theaters.each do |t| %>
+        <% theater = Theater.find(t.theater_id) %>
+        <%= link_to theater.store_name, "#" %>
+      <% end %>
+    </td>
+  </tr>
 </table>

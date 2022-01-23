@@ -1,5 +1,5 @@
 class Movie < ApplicationRecord
-  has_many :schedules, dependent: :destroy
+  has_many :schedules
   has_one_attached :movie_picture
   attribute :new_movie_picture
 

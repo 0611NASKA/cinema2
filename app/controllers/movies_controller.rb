@@ -10,5 +10,6 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @theaters = @movie.schedules.select(:theater_id).distinct
   end
 end

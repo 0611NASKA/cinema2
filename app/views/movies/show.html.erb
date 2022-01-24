@@ -34,7 +34,7 @@
     <td>
       <% @theaters.each do |t| %>
         <% theater = Theater.find(t.theater_id) %>
-        <%= link_to theater.store_name, "#" %>
+        <%= link_to theater.store_name, :schedule %>
       <% end %>
     </td>
   </tr>

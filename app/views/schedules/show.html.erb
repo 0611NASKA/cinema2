@@ -1,0 +1,38 @@
+<% @page_title = @movie.title + "の上映スケジュール" %>
+
+<table class = "list">
+  <thead>
+    <tr>
+      <th>作品名</th>
+      <th>上映時間</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @movie.title %></td>
+      <td><%= @movie.screening_time %></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>上映スケジュール</h2>
+<table class = "list">
+  <thead>
+    <tr>
+      <th>上映日</th>
+      <th>スクリーン</th>
+      <th>上映時間</th>
+      <th>予約</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schedules.each do |s| %>
+      <tr>
+        <td><%= s.screening_date.strftime("%m/%d") %></td>
+        <td><%= s.screen_no %></td>
+        <td><%= s.start_time.strftime("%H:%M") + "~" + s.end_time.strftime("%H:%M") %></td>
+        <td><%= link_to "予約する", "#" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

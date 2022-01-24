@@ -12,7 +12,7 @@
       <% @movies.each do |m| %>
         <tr>
           <% movie = Movie.find(m.movie_id) %>
-          <td><%= link_to movie.title, "#" %></td>
+          <td><%= link_to movie.title, theater_movie_path(params[:id], movie) %></td>
           <td><%= movie.screening_time %></td>
         </tr>
       <% end %>

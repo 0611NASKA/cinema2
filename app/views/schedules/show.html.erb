@@ -31,7 +31,12 @@
         <td><%= s.screening_date.strftime("%m/%d") %></td>
         <td><%= s.screen_no %></td>
         <td><%= s.start_time.strftime("%H:%M") + "~" + s.end_time.strftime("%H:%M") %></td>
-        <td><%= link_to "予約する", "#" %></td>
+        <td>
+          <%= form_tag(reservations_path, method: :post) do %>
+            <%= hidden_field_tag "schedule_id", s.id %>
+            <%= submit_tag("予約する") %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

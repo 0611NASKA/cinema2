@@ -1,22 +1,36 @@
 Rails.application.routes.draw do
   root "top#index"
+  get "bad_request" => "top#bad_request"
+  get "forbidden" => "top#forbidden"
+  get "internal_server_error" => "top#internal_server_error"
+
   resources :movies do
     get "search", on: :collection
     resources :schedules
     resources :theaters
+    resources :reservations
   end
   resources :theaters do
     resources :movies
     resources :schedules
+    resources :reservations
   end
   resources :schedules do
     resource :movie
+    resources :reservations
+    get "search", on: :collection
   end
   resources :tickets
-  resources :reservations
+  resources :reservations do
+  0.upto(3) do |idx|
+    post "step#{idx}"
+  end
+end
   resource :session, only: [:create, :destroy]
   resource :adminsession, only: [:create, :destroy]
   resource :account, except: :destroy
   resource :password, only: [:show, :edit, :update]
-  resources :admin
+  namespace :admin do
+    root"top#index"
+  end
 end

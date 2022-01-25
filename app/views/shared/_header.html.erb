@@ -15,13 +15,10 @@
 <% end %>
 <header>BookFilm</header>
 
-<nav class="menubar">
-  <ul>
-    <%= menu_link_to "TOP", :root %>
-    <%= menu_link_to "作品検索", :movies %>
-    <%= menu_link_to "劇場選択", :theaters %>
-    <% if current_member %>
-      <%= menu_link_to "マイページ", :account %>
-    <% end %>
-  </ul>
-</nav>
+<%=
+  if controller.kind_of?(Admin::Base)
+    render "shared/admin_menubar"
+  else
+    render "shared/menubar"
+  end
+%>

@@ -1,0 +1,40 @@
+<%= render "shared/errors", obj: @movie %>
+
+<table class="attr">
+  <tr>
+    <th><%= form.label :title, "タイトル" %></th>
+    <td><%= form.text_field :title, size: 20 %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :explanation, "説明" %></th>
+    <td><%= form.text_area :explanation, rows: 10, cols: 45 %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :released_at, "公開開始日" %></th>
+    <td><%= form.datetime_select :released_at,
+              start_year: Time.current.year, end_year: Time.current.year + 1,
+              use_month_numbers: true %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :expired_at, "公開終了日" %></th>
+    <td>
+      <div id="movie_expired_at">
+      <%= form.datetime_select :expired_at,
+           start_year: Time.current.year, end_year: Time.current.year + 1,
+           use_month_numbers: true %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :screening_time, "上映時間" %></th>
+    <td><%= form.text_field :screening_time, size: 20 %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :distribution, "配給" %></th>
+    <td><%= form.text_field :distribution, size: 20 %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :director, "監督" %></th>
+    <td><%= form.text_field :director, size: 20 %></td>
+  </tr>
+</table>

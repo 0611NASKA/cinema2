@@ -5,6 +5,8 @@ class Movie < ApplicationRecord
 
   validates :title, presence: true
   validates :explanation, presence: true
+  validates :screening_time, presence: true,
+  numericality: {only_integer: true, greater_than_or_equal_to: 1 }
 
   class << self
     def search(query)

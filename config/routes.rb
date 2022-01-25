@@ -22,15 +22,25 @@ Rails.application.routes.draw do
   end
   resources :tickets
   resources :reservations do
-  0.upto(3) do |idx|
-    post "step#{idx}"
+    0.upto(3) do |idx|
+      post "step#{idx}"
+    end
   end
-end
   resource :session, only: [:create, :destroy]
   resource :adminsession, only: [:create, :destroy]
   resource :account, except: :destroy
   resource :password, only: [:show, :edit, :update]
   namespace :admin do
-    root"top#index"
+    root to: "top#index"
+    resources :movies do
+      resources :theaters
+      resources :schedules
+      resources :reservations
+    end
+    resources :schedules do
+      resources :movies
+      resources :reservations
+    end
+    resources :reservations
   end
 end

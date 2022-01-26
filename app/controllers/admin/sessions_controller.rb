@@ -2,10 +2,7 @@ class Admin::SessionsController < Admin::Base
   def create
     admin = Admin.find_by(login_id: params[:login_id])
     if admin&.authenticate(params[:password])
-      cookies.signed[:admin_id] = {
-        :value => admin.id,
-        :expires => 10.minutes.from_now,
-      }
+      cookies.signed[:admin_id] = {value: admin.id}
       redirect_to :admin_root
     else
       flash.alert = "ログインIDとパスワードが一致しません"

@@ -2,10 +2,7 @@ class SessionsController < ApplicationController
   def create
     member = Member.find_by(login_id: params[:login_id])
     if member&.authenticate(params[:password])
-      cookies.signed[:member_id] = {
-        :value => member.id,
-        :expires => 10.minutes.from_now,
-      }
+      session[:member_id] = member.id
     else
       flash.alert = "ログインIDとパスワードが一致しません"
     end
@@ -13,7 +10,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    cookies.delete(:member_id)
+    session.delete(:member_id)
     redirect_to :root
   end
 end

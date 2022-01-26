@@ -8,25 +8,25 @@ Rails.application.routes.draw do
     get "search", on: :collection
     resources :schedules
     resources :theaters
-    resources :reservations
+    resource :reservation
   end
   resources :theaters do
     resources :movies
     resources :schedules
-    resources :reservations
+    resource :reservation
   end
   resources :schedules do
     resource :movie
-    resources :reservations
+    resource :reservation
     get "search", on: :collection
   end
   resources :tickets
   resources :reservations do
-    resources :tickets
-    0.upto(3) do |idx|
-      post "step#{idx}"
-    end
+  0.upto(3) do |idx|
+    post "step#{idx}"
   end
+  resources :tickets
+end
   resource :session, only: [:create, :destroy]
   resource :account, except: :destroy
   resource :password, only: [:show, :edit, :update]

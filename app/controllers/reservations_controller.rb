@@ -1,8 +1,7 @@
 class ReservationsController < ApplicationController
-  before_action :login_required
+  # before_action :login_required
 
   def step0
-    @tickets = Ticket.all
   end
 
   def step1

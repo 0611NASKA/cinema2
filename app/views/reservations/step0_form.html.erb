@@ -1,0 +1,8 @@
+<%= render "shared/errors", obj: @reservations %>
+
+<table class="attr">
+  <tr>
+    <th><%= form.label t_type, @tickets.t_type %></th>
+    <td><%= form.number_field t_type %></td>
+  </tr>
+</table>

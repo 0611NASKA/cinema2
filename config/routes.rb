@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
   resources :tickets
   resources :reservations do
+    resources :tickets
     0.upto(3) do |idx|
       post "step#{idx}"
     end
@@ -39,6 +40,7 @@ Rails.application.routes.draw do
     end
     resources :schedules do
       resources :movies
+      resources :theaters
       resources :reservations
     end
     resources :reservations

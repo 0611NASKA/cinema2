@@ -1,0 +1,30 @@
+<%= render "shared/errors", obj: @schedule %>
+
+<table class="attr">
+  <tr>
+    <th><%= form.label :theater_id, "店舗番号" %></th>
+    <td><%= form.number_field :theater_id %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :movie_id, "作品番号" %></th>
+    <td><%= form.number_field :movie_id %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :screen_no, "スクリーン" %></th>
+    <td><%= form.number_field :screen_no %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :screening_date, "上映日" %></th>
+    <td><%= form.date_select :screening_date,
+              start_year: Time.current.year, end_year: Time.current.year + 1,
+              use_month_numbers: true %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :start_time, "上映開始時間" %></th>
+    <td><%= form.time_select :start_time %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :end_time, "上映終了時間" %></th>
+    <td><%= form.time_select :end_time %></td>
+  </tr>
+</table>

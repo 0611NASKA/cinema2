@@ -8,6 +8,19 @@ class Movie < ApplicationRecord
   validates :screening_time, presence: true,
   numericality: {only_integer: true, greater_than_or_equal_to: 1 }
 
+  scope :visible, -> do
+    now = Time.current
+
+    where("released_at <= ?", now)
+      .where("expired_at > ? OR expired_at IS NULL", now)
+  end
+
+  validate do
+    if expired_at && expired_at < released_at
+      errors.add(:expired_at, "は公開開始日時より新しい日時にしてください。")
+    end
+  end
+
   class << self
     def search(query)
       rel = order("id")

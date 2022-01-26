@@ -1,6 +1,6 @@
 class Admin::MoviesController < Admin::Base
   def index
-    @movies = Movie.order("id")
+    @movies = Movie.order(released_at: :desc)
   end
 
   def show

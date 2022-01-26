@@ -1,0 +1,18 @@
+<% @page_title = "予約一覧" %>
+
+<% if @reservations.present? %>
+  <table class = "list">
+    <thead>
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reservations.each do |r| %>
+        <tr>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>予約情報がありません。</p>
+<% end %>

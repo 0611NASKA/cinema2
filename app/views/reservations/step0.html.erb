@@ -1,2 +1,10 @@
 <% @page_title = "チケット選択" %>
+
 <h2>チケットの枚数と種別を選択してください</h2>
+
+<% @tickets.each do |ticket| %>
+  <%= form_for ticket do |form| %>
+    <%= render "step0_form", form: form %>
+    <div><%= form.submit %></div>
+  <% end %>
+<% end %>

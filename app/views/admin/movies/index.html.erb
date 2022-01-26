@@ -6,12 +6,14 @@
   <table class = "list">
     <thead>
       <tr>
+        <th>作品番号</th>
         <th>作品名</th>
       </tr>
     </thead>
     <tbody>
       <% @movies.each do |movie| %>
         <tr>
+          <td><%= movie.id %></td>
           <td><%= link_to movie.title, [:admin, movie] %></td>
         </tr>
       <% end %>

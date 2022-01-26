@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <th><%= form.label :released_at, "公開開始日" %></th>
-    <td><%= form.datetime_select :released_at,
+    <td><%= form.date_select :released_at,
               start_year: Time.current.year, end_year: Time.current.year + 1,
               use_month_numbers: true %></td>
   </tr>
@@ -19,7 +19,7 @@
     <th><%= form.label :expired_at, "公開終了日" %></th>
     <td>
       <div id="movie_expired_at">
-      <%= form.datetime_select :expired_at,
+      <%= form.date_select :expired_at,
            start_year: Time.current.year, end_year: Time.current.year + 1,
            use_month_numbers: true %>
       </div>

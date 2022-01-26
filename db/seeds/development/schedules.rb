@@ -4,8 +4,8 @@
     movie_id: idx%16+1,
     screen_no: 1,
     screening_date: Date.today,
-    start_time: Time.parse("12:00"),
-    end_time: Time.parse("14:00")
+    start_time: Time.parse("20:00"),
+    end_time: Time.parse("22:00")
   )
 end
 
@@ -15,8 +15,8 @@ end
     movie_id: idx%16+1,
     screen_no: 2,
     screening_date: Date.today,
-    start_time: Time.parse("15:30"),
-    end_time: Time.parse("17:30")
+    start_time: Time.parse("18:30"),
+    end_time: Time.parse("20:30")
   )
 end
 
@@ -26,8 +26,8 @@ end
     movie_id: idx%16+1,
     screen_no: 3,
     screening_date: Date.today,
-    start_time: Time.parse("15:30"),
-    end_time: Time.parse("17:30")
+    start_time: Time.parse("20:30"),
+    end_time: Time.parse("22:30")
   )
 end
 
@@ -37,7 +37,7 @@ end
     movie_id: idx%16+1,
     screen_no: 4,
     screening_date: Date.today,
-    start_time: Time.parse("15:30"),
-    end_time: Time.parse("17:30")
+    start_time: Time.parse("19:30"),
+    end_time: Time.parse("21:30")
   )
 end

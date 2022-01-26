@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Admin::SessionsController < Admin::Base
   def create
     admin = Admin.find_by(login_id: params[:login_id])
     if admin&.authenticate(params[:password])
@@ -6,10 +6,11 @@ class SessionsController < ApplicationController
         :value => admin.id,
         :expires => 10.minutes.from_now,
       }
+      redirect_to :admin_root
     else
       flash.alert = "ログインIDとパスワードが一致しません"
+      redirect_to :root
     end
-    redirect_to :root
   end
 
   def destroy

@@ -1,0 +1,13 @@
+<%= render "shared/errors", obj: @reservations %>
+
+<table>
+  <% Ticket.all.each do |t| %>
+    <tr>
+      <th><%= t.t_type %></th>
+      <td width=200px>
+        <%= t.total.to_s(:delimited) %>円:
+        <%= number_field_tag "quantity[#{t.id}]", 0, min: 0, max: 99 %>枚
+      </td>
+    </tr>
+  <% end %>
+</table>

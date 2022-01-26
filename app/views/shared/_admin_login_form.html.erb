@@ -1,8 +1,8 @@
-<h2>ログイン</h2>
+<h2>管理者用ログイン</h2>
 <% if flash.alert %><p class="alert"><%= flash.alert %></p><% end %>
-<%= form_tag :session, id: "login_form" do %>
+<%= form_tag [:admin, :session], id: "admin_login_form" do %>
   <div>
-    <label>ユーザID：</label>
+    <label>管理者ID：</label>
     <input type="text" name="login_id">
   </div>
   <div>
@@ -13,4 +13,3 @@
     <input type="submit" value="ログイン">
   </div>
 <% end %>
-<%= link_to "会員登録はこちら", :new_account %>

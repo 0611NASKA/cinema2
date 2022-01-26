@@ -28,11 +28,10 @@ Rails.application.routes.draw do
     end
   end
   resource :session, only: [:create, :destroy]
-  resource :adminsession, only: [:create, :destroy]
   resource :account, except: :destroy
   resource :password, only: [:show, :edit, :update]
   namespace :admin do
-    root to: "top#index"
+    root "admins#show"
     resources :movies do
       resources :theaters
       resources :schedules
@@ -44,5 +43,6 @@ Rails.application.routes.draw do
       resources :reservations
     end
     resources :reservations
+    resource :session
   end
 end

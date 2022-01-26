@@ -2,10 +2,12 @@ class ReservationsController < ApplicationController
   before_action :login_required
 
   def step0
-    @tickets = Ticket.order("id")
+    @tickets = Ticket.all
   end
 
   def step1
+    @reservation = Reservation.find(params[:id])
+    @quantity = 1
   end
 
   def create

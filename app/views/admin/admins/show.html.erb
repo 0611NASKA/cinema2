@@ -1,0 +1,24 @@
+<% @page_title = "管理者マイページ" %>
+
+<table class = "attr">
+  <tr>
+    <th>ログインID</th>
+    <td><%= @admin.login_id %></td>
+  </tr>
+  <tr>
+    <th>氏名</th>
+    <td><%= @admin.name %></td>
+  </tr>
+  <tr>
+    <th>誕生日</th>
+    <td><%= @admin.birthday %></td>
+  </tr>
+  <tr>
+    <th>電話番号</th>
+    <td><%= @admin.tel %></td>
+  </tr>
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= @admin.email %></td>
+  </tr>
+</table>

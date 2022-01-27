@@ -6,8 +6,8 @@ int = 10
 0.upto(9) do |idx|
   Member.create(
     login_id: ids[idx],
-    password: "#{ids[idx]}",
-    password_confirmation: "#{ids[idx]}",
+    password: "cinema!",
+    password_confirmation: "cinema!",
     name: "#{fnames[idx % 4]} #{gnames[idx % 3]}",
     birthday: "#{rand(1980..2000)}-#{rand(1..12)}-#{rand(1..20)}",
     tel: "0120-00-0"+idx.to_s+int.to_s,

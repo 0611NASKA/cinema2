@@ -1,14 +1,42 @@
 <% @page_title = "予約一覧" %>
 
+<%= form_tag :search_admin_reservations, method: :get, class: "search" do %>
+  <%= text_field_tag "q", params[:q] %>
+  <%= select_tag "order", options_for_select([
+      ["ID昇順", "id ASC"], ["ID降順", "id DESC"], ["更新が新しい順", "confirm_time DESC"], ["更新が古い順", "confirm_time ASC"]
+    ], params[:order]) %>
+  <%= submit_tag "検索" %>
+<% end %>
+
 <% if @reservations.present? %>
   <table class = "list">
     <thead>
       <tr>
+        <th>作品名</th>
+        <th>会員id</th>
+        <th>上映id</th>
+        <th>枚数</th>
+        <th>合計金額</th>
+        <th>更新時間</th>
+        <th>予約状態</th>
       </tr>
     </thead>
     <tbody>
       <% @reservations.each do |r| %>
         <tr>
+          <td><%= r.schedule.movie.title %></td>
+          <td><%= r.member_id %></td>
+          <td><%= r.schedule_id %></td>
+          <td><%= r.chiket_sheets %></td>
+          <td><%= r.total_sheets %></td>
+          <td><%= r.confirm_time %></td>
+          <td>
+            <% if r.status == 0 %>
+              <%= "仮予約" %>
+            <% else %>
+              <%= "予約確定" %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>

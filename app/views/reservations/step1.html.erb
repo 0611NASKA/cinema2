@@ -4,8 +4,8 @@
   placement = Hash.new  # 配置データの取得
   seat_total = 0  # データの総座席数をカウント
   Seat.where(seat_group: @reservation.schedule.screen_no).each do |rel|  # モデルのコンパイル
-    unless placement[rel.row] then placement[rel.row] = [] end
-    placement[rel.row].push(rel.start_line); placement[rel.row].push(rel.end_line)
+     unless placement[rel.line] then placement[rel.line] = [] end
+    placement[rel.line].push(rel.start_line); placement[rel.line].push(rel.last_line)
     seat_total += rel.num
   end
   reserved = Array.new  # 予約済みの座席を取得
@@ -20,7 +20,7 @@
   let reserved = '<%= reserved.to_json.html_safe %>'
 </script>
 
-<%= form_for @reservation, as: "reservation", url: :step2_reservation, method: :post do |form| %>
+<%= form_for @reservation, as: "reservation", url: [@reservation, :step2], method: :post do |form| %>
   <%= render "seat_form" %>
   <div align=right>（残 <%= seat_total - reserved.length %>/<%= seat_total %> 席）</div>
   <%= form.hidden_field :id %>

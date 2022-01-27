@@ -3,7 +3,7 @@ class CreateReservationDetails < ActiveRecord::Migration[5.2]
     create_table :reservation_details do |t|
       t.references :reservation, null: false
       t.references :ticket, null: false
-      t.string :seat, null: false
+      t.string :seat
 
       t.timestamps
     end

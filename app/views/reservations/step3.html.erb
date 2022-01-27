@@ -1,0 +1,43 @@
+<% @page_title = "予約確認" %>
+
+<h2>予約内容の確認をお願いします</h2>
+
+<%= form_for @reservation do |form| %>
+  <table class="attr">
+    <% detail = ReservationDetail.where(reservation_id: @reservation) %>
+    <tr>
+      <th>劇場</th>
+      <td width=300px><%= @reservation.schedule.theater.store_name %></td>
+    </tr>
+    <tr>
+      <th>作品タイトル</th>
+      <td><%= @reservation.schedule.movie.title %></td>
+    </tr>
+    <tr>
+      <th>上映日</th>
+      <td>
+        <%= @reservation.schedule.screening_date.strftime("%Y年%m月%d日") %>
+      </td>
+    </tr>
+    <tr>
+      <th>上映時間</th>
+      <td>
+        <%= @reservation.schedule.start_time.strftime("%H:%M") %>~<%= @reservation.schedule.end_time.strftime("%H:%M") %>
+        (スクリーン<%= @reservation.schedule.screen_no %>)
+      </td>
+    </tr>
+    <tr>
+      <th>座席</th>
+      <td><%= detail.map{|val|val.seat.to_s}.join(", ") %></td>
+    </tr>
+    <tr>
+      <th>券種</th>
+      <td><%= detail.map{|val|val.ticket.t_type.to_s}.join(", ") %></td>
+    </tr>
+    <tr>
+      <th>合計</th>
+      <td><%= @reservation.total_sheets.to_s(:delimited) + "円" if @reservation.total_sheets %></td>
+    </tr>
+  </table>
+  <%= form.submit "確定" %>
+<% end %>

@@ -1,7 +1,9 @@
-0.upto(20) do |idx|
-  Screen.create(
-    theater_id: idx%3+1,
-    screen_no: idx+1,
-    seat_group: idx+1
-  )
+1.upto(3) do |t|
+  1.upto(12) do |n|
+    Screen.create(
+      screen_no: n,
+      theater_id: t,
+      seat_group: n
+    )
+  end
 end

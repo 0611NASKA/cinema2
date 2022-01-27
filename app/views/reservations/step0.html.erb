@@ -3,7 +3,7 @@
 <h2>チケットの枚数と種別を選択してください</h2>
 
 <table>
-  <%= form_tag(url: :reservation_step1, method: :post) do %>
+  <%= form_tag([@reservation, :step1], method: :post) do %>
     <% Ticket.all.each do |t| %>
       <tr>
         <th><%= t.t_type %></th>

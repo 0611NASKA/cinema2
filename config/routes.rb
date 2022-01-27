@@ -18,15 +18,14 @@ Rails.application.routes.draw do
   resources :schedules do
     resource :movie
     resource :reservation
-    get "search", on: :collection
+    get "search", on: :member
   end
   resources :tickets
   resources :reservations do
-  0.upto(3) do |idx|
-    post "step#{idx}"
+    0.upto(3) do |idx|
+      post "step#{idx}"
+    end
   end
-  resources :tickets
-end
   resource :session, only: [:create, :destroy]
   resource :account, except: :destroy
   resource :password, only: [:show, :edit, :update]
@@ -42,7 +41,9 @@ end
       resources :theaters
       resources :reservations
     end
-    resources :reservations
+    resources :reservations do
+      get "search", on: :collection
+    end
     resource :session
   end
 end

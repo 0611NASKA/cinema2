@@ -16,6 +16,12 @@
 </table>
 
 <h2>上映スケジュール</h2>
+
+<%= form_tag(:search_schedule, method: :get) do %>
+  <%= select_tag "d", options_for_select(0.upto(6).map {|day| [Date.current + day, Date.current + day]}) %>
+  <%= submit_tag ("検索") %>
+<% end %>
+
 <table class = "list">
   <thead>
     <tr>

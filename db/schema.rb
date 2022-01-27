@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2022_01_16_181113) do
   create_table "reservation_details", force: :cascade do |t|
     t.integer "reservation_id", null: false
     t.integer "ticket_id", null: false
-    t.string "seat", null: false
+    t.string "seat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["reservation_id"], name: "index_reservation_details_on_reservation_id"

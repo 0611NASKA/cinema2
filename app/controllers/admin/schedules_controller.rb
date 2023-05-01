@@ -6,6 +6,8 @@ class Admin::SchedulesController < Admin::Base
 
   def new
     @schedule = Schedule.new
+    @movies = Movie.all
+    @theaters = Theater.all
   end
 
   def create

@@ -6,8 +6,8 @@
   <table class = "list">
     <thead>
       <tr>
-        <th>店舗番号</th>
-        <th>作品番号</th>
+        <th>店舗名</th>
+        <th>作品名</th>
         <th>スクリーン</th>
         <th>上映日</th>
         <th>上映開始時間</th>
@@ -17,8 +17,8 @@
     <tbody>
       <% @schedules.each do |s| %>
         <tr>
-          <td><%= s.theater_id %></td>
-          <td><%= s.movie_id %></td>
+          <td><%= s.theater.store_name %></td>
+          <td><%= s.movie.title %></td>
           <td><%= s.screen_no %></td>
           <td><%= s.screening_date.strftime("%y/%m/%d") %></td>
           <td><%= s.start_time.strftime("%H:%M") %></td>

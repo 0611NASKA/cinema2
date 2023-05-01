@@ -15,7 +15,6 @@
         <th>作品名</th>
         <th>会員id</th>
         <th>上映id</th>
-        <th>枚数</th>
         <th>合計金額</th>
         <th>更新時間</th>
         <th>予約状態</th>
@@ -27,9 +26,8 @@
           <td><%= r.schedule.movie.title %></td>
           <td><%= r.member_id %></td>
           <td><%= r.schedule_id %></td>
-          <td><%= r.chiket_sheets %></td>
           <td><%= r.total_sheets %></td>
-          <td><%= r.confirm_time %></td>
+          <td><%= r.confirm_time.strftime('%Y/%m/%d %H:%M:%S') %></td>
           <td>
             <% if r.status == 0 %>
               <%= "仮予約" %>

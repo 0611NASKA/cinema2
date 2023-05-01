@@ -19,7 +19,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:reservation_id])
     seats = params[:seats].keys.map(&:to_s)
     @reservation.reservation_details.each do |d|
-      d.update_attributes(seat: seats.shift)
+      d.update(seat: seats.shift)
     end
   end
 

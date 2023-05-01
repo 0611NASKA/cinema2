@@ -2,12 +2,12 @@
 
 <table class="attr">
   <tr>
-    <th><%= form.label :theater_id, "店舗番号" %></th>
-    <td><%= form.number_field :theater_id %></td>
+    <th><%= form.label :theater_id, "店舗名" %></th>
+    <td><%= form.select :theater_id, @theaters.map{ |theater| [theater.store_name, @schedule.theater_id = theater.id]} %></td>
   </tr>
   <tr>
-    <th><%= form.label :movie_id, "作品番号" %></th>
-    <td><%= form.number_field :movie_id %></td>
+    <th><%= form.label :movie_id, "作品名" %></th>
+    <td><%= form.select :movie_id, @movies.map{ |movie| [movie.title, @schedule.movie_id = movie.id]} %></td>
   </tr>
   <tr>
     <th><%= form.label :screen_no, "スクリーン" %></th>

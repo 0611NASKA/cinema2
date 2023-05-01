@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.3'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.6'
+gem 'rails', '~> 6.1.4'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
 end
 # Use postgress for the production mode
-gem 'pg', group: :production
+#gem 'pg', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -37,7 +37,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'email_validator', '~> 1.6'
-gem 'rails-i18n', '~> 5.1'
+gem 'rails-i18n'
 gem 'date_validator', '~> 0.12.0'
 gem 'kaminari'
 gem 'kaminari-i18n'
